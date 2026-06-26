@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منوی El Coffee</title>
+  {% load static menu_extras %}
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {% comment %} <link href="https://fonts.googleapis.com/css2?family=Mirza&family=Lateef:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> {% endcomment %}
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="wave-top" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,50 C240,95 480,5 720,50 C960,95 1200,5 1440,50 L1440,0 L0,0 Z" fill="rgba(75,46,32,0.12)"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="logo-wrap">
+        <img src="{% static 'images/El_logo.png' %}" alt="El Coffee" class="logo-img">
+      </div>
+      <p class="hero-sub">منوی دیجیتال کافه اِل</p>
+      <div class="hero-divider">
+        <span></span><span class="diamond">◆</span><span></span>
+      </div>
+      <p class="hero-tagline">جایی که امواج دریا با عطر قهوه درهم می‌آمیزند</p>
+    </div>
+    <div class="wave-bottom" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,40 C360,95 720,0 1080,55 C1260,85 1380,25 1440,45 L1440,100 L0,100 Z" fill="#F5EFE6"/>
+      </svg>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Specials Strip -->
+    {% if specials %}
+    <section class="specials-section">
+      <div class="section-badge">
+        <span class="badge-icon">✦</span>
+        <span>پیشنهادهای ویژه امروز</span>
+        <span class="badge-icon">✦</span>
+      </div>
+      <div class="specials-scroll">
+        {% for item in specials %}
+        <div class="special-chip">
+          <span class="special-chip-icon">{{ item.category.icon }}</span>
+          <span class="special-chip-name">{{ item.title }}</span>
+          <span class="special-chip-price">{{ item.formatted_price|persian }} تومان</span>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Category Filter Tabs -->
+    <nav class="category-nav" aria-label="دسته‌بندی‌ها">
+      <button class="cat-tab active" data-filter="all">
+        <span class="cat-tab-icon">🌊</span>
+        <span>همه</span>
+      </button>
+      {% for category in categories %}
+      <button class="cat-tab" data-filter="cat-{{ category.pk }}">
+        <span class="cat-tab-icon">{{ category.icon }}</span>
+        <span>{{ category.name }}</span>
+      </button>
+      {% endfor %}
+    </nav>
+
+    <!-- Menu Sections -->
+    {% for category in categories %}
+    <section class="menu-section" id="cat-{{ category.pk }}" data-category="cat-{{ category.pk }}">
+      <div class="section-header">
+        <div class="section-icon">{{ category.icon }}</div>
+        <h2 class="section-title">{{ category.name }}</h2>
+      </div>
+
+      <div class="items-grid">
+        {% for item in category.items.all %}
+        {% if item.is_available %}
+        <article class="menu-card {% if item.is_special %}is-special{% endif %}">
+          {% if item.is_special %}
+          <div class="special-badge">ویژه</div>
+          {% endif %}
+          <div class="card-image-wrap">
+            {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-image" loading="lazy">
+            {% else %}
+            <div class="card-image-placeholder">
+              <span class="placeholder-icon">{{ category.icon }}</span>
+            </div>
+            {% endif %}
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-ingredients">
+              <span class="ing-label">ترکیبات:</span>
+              {{ item.ingredients }}
+            </p>
+            <div class="card-footer">
+              <span class="card-price">
+                <span class="price-num">{{ item.formatted_price|persian }}</span>
+                <span class="price-unit">تومان</span>
+              </span>
+              <span class="card-orn" aria-hidden="true">〜〜</span>
+            </div>
+          </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,35 C360,70 720,0 1080,35 C1260,52 1380,18 1440,35 L1440,0 L0,0 Z" fill="#E8D8C2"/>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <img src="{% static 'images/El_logo.png' %}" alt="El Coffee" class="footer-logo-img">
+      <p class="footer-tagline">قهوه‌ای به مذاق دریا</p>
+      <div class="footer-divider">〜〜〜〜〜〜〜〜〜</div>
+      <p class="footer-copy">با عشق برای دریا و قهوه ☕🌊</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

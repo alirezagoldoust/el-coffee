@@ -1,0 +1,116 @@
+[
+  {"model": "menu.category", "pk": 1, "fields": {"name": "نوشیدنی‌های گرم", "icon": "☕", "order": 1}},
+  {"model": "menu.category", "pk": 2, "fields": {"name": "نوشیدنی‌های سرد", "icon": "🧊", "order": 2}},
+  {"model": "menu.category", "pk": 3, "fields": {"name": "شیک و اسموتی", "icon": "🥤", "order": 3}},
+  {"model": "menu.category", "pk": 4, "fields": {"name": "دسر و شیرینی", "icon": "🍰", "order": 4}},
+  {"model": "menu.category", "pk": 5, "fields": {"name": "صبحانه", "icon": "🥐", "order": 5}},
+
+  {"model": "menu.menuitem", "pk": 1, "fields": {
+    "category": 1, "title": "اسپرسو", "price": 45000,
+    "ingredients": "قهوه عربیکا، آب",
+    "image": "", "is_available": true, "is_special": false, "order": 1}},
+  {"model": "menu.menuitem", "pk": 2, "fields": {
+    "category": 1, "title": "آمریکانو", "price": 55000,
+    "ingredients": "اسپرسو دوبل، آب گرم",
+    "image": "", "is_available": true, "is_special": false, "order": 2}},
+  {"model": "menu.menuitem", "pk": 3, "fields": {
+    "category": 1, "title": "لاته", "price": 75000,
+    "ingredients": "اسپرسو، شیر بخار داده شده، فوم شیر",
+    "image": "", "is_available": true, "is_special": true, "order": 3}},
+  {"model": "menu.menuitem", "pk": 4, "fields": {
+    "category": 1, "title": "کاپوچینو", "price": 70000,
+    "ingredients": "اسپرسو، شیر بخار، فوم غلیظ شیر",
+    "image": "", "is_available": true, "is_special": false, "order": 4}},
+  {"model": "menu.menuitem", "pk": 5, "fields": {
+    "category": 1, "title": "موکا", "price": 85000,
+    "ingredients": "اسپرسو، شکلات داغ، شیر بخار، خامه فرم گرفته",
+    "image": "", "is_available": true, "is_special": true, "order": 5}},
+  {"model": "menu.menuitem", "pk": 6, "fields": {
+    "category": 1, "title": "ماکیاتو", "price": 80000,
+    "ingredients": "اسپرسو، شیر سرد، کارامل",
+    "image": "", "is_available": true, "is_special": false, "order": 6}},
+  {"model": "menu.menuitem", "pk": 7, "fields": {
+    "category": 1, "title": "فلت وایت", "price": 78000,
+    "ingredients": "اسپرسو دوبل، شیر بخار ریزبافت",
+    "image": "", "is_available": true, "is_special": false, "order": 7}},
+  {"model": "menu.menuitem", "pk": 8, "fields": {
+    "category": 1, "title": "هات چاکلت", "price": 72000,
+    "ingredients": "شکلات بلژیکی، شیر گرم، خامه فرم گرفته",
+    "image": "", "is_available": true, "is_special": false, "order": 8}},
+
+  {"model": "menu.menuitem", "pk": 9, "fields": {
+    "category": 2, "title": "آیس لاته", "price": 82000,
+    "ingredients": "اسپرسو، شیر سرد، یخ",
+    "image": "", "is_available": true, "is_special": false, "order": 1}},
+  {"model": "menu.menuitem", "pk": 10, "fields": {
+    "category": 2, "title": "آیس آمریکانو", "price": 62000,
+    "ingredients": "اسپرسو دوبل، آب سرد، یخ",
+    "image": "", "is_available": true, "is_special": false, "order": 2}},
+  {"model": "menu.menuitem", "pk": 11, "fields": {
+    "category": 2, "title": "کلد برو", "price": 90000,
+    "ingredients": "قهوه دم سرد ۱۲ ساعته، یخ",
+    "image": "", "is_available": true, "is_special": true, "order": 3}},
+  {"model": "menu.menuitem", "pk": 12, "fields": {
+    "category": 2, "title": "فرپوچینو", "price": 95000,
+    "ingredients": "اسپرسو، شیر، یخ، شربت وانیل، خامه",
+    "image": "", "is_available": true, "is_special": false, "order": 4}},
+  {"model": "menu.menuitem", "pk": 13, "fields": {
+    "category": 2, "title": "آیس موکا", "price": 92000,
+    "ingredients": "اسپرسو، شیر سرد، شکلات، یخ، خامه",
+    "image": "", "is_available": true, "is_special": false, "order": 5}},
+  {"model": "menu.menuitem", "pk": 14, "fields": {
+    "category": 2, "title": "لیموناد دریایی", "price": 68000,
+    "ingredients": "لیمو تازه، نعنا، آب گازدار، شربت",
+    "image": "", "is_available": true, "is_special": true, "order": 6}},
+
+  {"model": "menu.menuitem", "pk": 15, "fields": {
+    "category": 3, "title": "شیک شکلات", "price": 98000,
+    "ingredients": "شیر، بستنی شکلات، پودر کاکائو، خامه فرم گرفته",
+    "image": "", "is_available": true, "is_special": false, "order": 1}},
+  {"model": "menu.menuitem", "pk": 16, "fields": {
+    "category": 3, "title": "شیک وانیل", "price": 92000,
+    "ingredients": "شیر، بستنی وانیل، اسانس وانیل، خامه",
+    "image": "", "is_available": true, "is_special": false, "order": 2}},
+  {"model": "menu.menuitem", "pk": 17, "fields": {
+    "category": 3, "title": "شیک توت‌فرنگی", "price": 98000,
+    "ingredients": "شیر، بستنی توت‌فرنگی، توت‌فرنگی تازه، خامه",
+    "image": "", "is_available": true, "is_special": true, "order": 3}},
+  {"model": "menu.menuitem", "pk": 18, "fields": {
+    "category": 3, "title": "اسموتی انبه و نارگیل", "price": 105000,
+    "ingredients": "انبه تازه، شیر نارگیل، ماست، عسل، یخ",
+    "image": "", "is_available": true, "is_special": true, "order": 4}},
+  {"model": "menu.menuitem", "pk": 19, "fields": {
+    "category": 3, "title": "شیک کارامل", "price": 102000,
+    "ingredients": "شیر، بستنی وانیل، سس کارامل، خامه، کارامل",
+    "image": "", "is_available": true, "is_special": false, "order": 5}},
+
+  {"model": "menu.menuitem", "pk": 20, "fields": {
+    "category": 4, "title": "تیرامیسو", "price": 120000,
+    "ingredients": "ماسکارپونه، اسپرسو، بیسکوییت ساووایاردی، کاکائو",
+    "image": "", "is_available": true, "is_special": true, "order": 1}},
+  {"model": "menu.menuitem", "pk": 21, "fields": {
+    "category": 4, "title": "براونی شکلات", "price": 95000,
+    "ingredients": "شکلات تلخ، کره، تخم‌مرغ، آرد، گردو",
+    "image": "", "is_available": true, "is_special": false, "order": 2}},
+  {"model": "menu.menuitem", "pk": 22, "fields": {
+    "category": 4, "title": "چیزکیک ساحلی", "price": 115000,
+    "ingredients": "پنیر خامه‌ای، خامه ترش، ژله لیمو، بیسکوییت",
+    "image": "", "is_available": true, "is_special": true, "order": 3}},
+  {"model": "menu.menuitem", "pk": 23, "fields": {
+    "category": 4, "title": "کروسان کره‌ای", "price": 65000,
+    "ingredients": "کره فرانسوی، آرد، خمیرمایه، نمک",
+    "image": "", "is_available": true, "is_special": false, "order": 4}},
+
+  {"model": "menu.menuitem", "pk": 24, "fields": {
+    "category": 5, "title": "صبحانه کامل ساحلی", "price": 185000,
+    "ingredients": "تخم‌مرغ، پنیر، کره، مربا، نان تست، گوجه، خیار، چای",
+    "image": "", "is_available": true, "is_special": true, "order": 1}},
+  {"model": "menu.menuitem", "pk": 25, "fields": {
+    "category": 5, "title": "اومت سبزیجات", "price": 145000,
+    "ingredients": "تخم‌مرغ، فلفل دلمه، قارچ، پیاز، پنیر، روغن زیتون",
+    "image": "", "is_available": true, "is_special": false, "order": 2}},
+  {"model": "menu.menuitem", "pk": 26, "fields": {
+    "category": 5, "title": "پن‌کیک عسل و موز", "price": 125000,
+    "ingredients": "آرد، شیر، تخم‌مرغ، موز، عسل طبیعی، کره",
+    "image": "", "is_available": true, "is_special": false, "order": 3}}
+]
