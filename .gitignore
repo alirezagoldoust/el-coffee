@@ -348,7 +348,6 @@ local_*
 
 --ini
 bonus_core_uwsgi.ini
-staticfiles/*
 
 env*
 env/
